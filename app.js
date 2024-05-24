@@ -7,6 +7,10 @@ const port = process.env.PORT || 3000;
 const ejs = require('ejs');
 app.set('view engine', 'ejs');
 
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 let qrData;
 
 app.get('/qr', async (req, res) => {
