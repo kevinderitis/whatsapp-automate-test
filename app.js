@@ -15,9 +15,8 @@ let qrData;
 
 app.get('/qr', async (req, res) => {
     const data = qrData;
-  
+    
     try {
-    //   const qrText = await qrcode.toString(data);
         const qrText = data;
       res.render('qr-code', { qrText });
     } catch (error) {
@@ -25,6 +24,10 @@ app.get('/qr', async (req, res) => {
       res.status(500).send('Error generating QR code'); // Handle errors
     }
   });
+
+  app.get('/test', (req, res) => {
+    res.send('okokoko')
+  })
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
